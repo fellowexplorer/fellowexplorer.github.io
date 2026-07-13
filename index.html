@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>FellowExplorer · AI Builder & Explorer</title>
+  <meta name="description" content="FellowExplorer — I build AI-powered tools and explore the frontier of artificial intelligence. Explore my projects, writing, and ideas." />
+  <meta property="og:title" content="FellowExplorer · AI Builder & Explorer" />
+  <meta property="og:description" content="Building at the intersection of AI, software, and curiosity. Explore my projects and writing." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/logo.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="assets/logo.jpg" type="image/jpeg" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Preload hero font weight -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+  <!-- Animated Background -->
+  <canvas id="bg-canvas"></canvas>
+  <div class="bg-gradient-overlay"></div>
+
+  <!-- Mobile Menu Toggle -->
+  <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" id="mobileMenuToggle">
+    <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
+
+  <!-- Sidebar Overlay (mobile) -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="layout">
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-logo">
+        <img src="assets/logo.jpg" alt="FellowExplorer logo" />
+        <span>FellowExplorer</span>
+      </div>
+
+      <nav class="nav-section" aria-label="Main navigation">
+        <a class="nav-link active" href="#home" data-section="home" id="nav-home">
+          <div class="nav-link-left">
+            <div class="nav-icon">
+              <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            Home
+          </div>
+          <span class="nav-shortcut">1</span>
+        </a>
+        <a class="nav-link" href="#about" data-section="about" id="nav-about">
+          <div class="nav-link-left">
+            <div class="nav-icon">
+              <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            About
+          </div>
+          <span class="nav-shortcut">2</span>
+        </a>
+        <a class="nav-link" href="#projects" data-section="projects" id="nav-projects">
+          <div class="nav-link-left">
+            <div class="nav-icon">
+              <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            AI Projects
+          </div>
+          <span class="nav-shortcut">3</span>
+        </a>
+        <a class="nav-link" href="#writing" data-section="writing" id="nav-writing">
+          <div class="nav-link-left">
+            <div class="nav-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </div>
+            Writing
+          </div>
+          <span class="nav-shortcut">4</span>
+        </a>
+        <a class="nav-link" href="#contact" data-section="contact" id="nav-contact">
+          <div class="nav-link-left">
+            <div class="nav-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            Contact
+          </div>
+          <span class="nav-shortcut">5</span>
+        </a>
+      </nav>
+
+      <div class="nav-section">
+        <p class="nav-section-label">Links</p>
+        <a class="nav-link" href="https://github.com" target="_blank" rel="noopener noreferrer" id="nav-github">
+          <div class="nav-link-left">
+            <div class="nav-icon">
+              <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            </div>
+            GitHub
+          </div>
+          <span style="color: var(--text-muted); font-size: 12px;">↗</span>
+        </a>
+        <a class="nav-link" href="https://linkedin.com" target="_blank" rel="noopener noreferrer" id="nav-linkedin">
+          <div class="nav-link-left">
+            <div class="nav-icon">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            LinkedIn
+          </div>
+          <span style="color: var(--text-muted); font-size: 12px;">↗</span>
+        </a>
+        <a class="nav-link" href="https://twitter.com" target="_blank" rel="noopener noreferrer" id="nav-twitter">
+          <div class="nav-link-left">
+            <div class="nav-icon">
+              <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+            </div>
+            Twitter / X
+          </div>
+          <span style="color: var(--text-muted); font-size: 12px;">↗</span>
+        </a>
+      </div>
+
+      <!-- Theme Toggle -->
+      <div class="sidebar-footer">
+        <div class="theme-toggle" id="themeToggle">
+          <button class="theme-btn" data-theme="light" aria-label="Light theme">Light</button>
+          <button class="theme-btn active" data-theme="dark" aria-label="Dark theme">Dark</button>
+          <button class="theme-btn" data-theme="auto" aria-label="Auto theme">Auto</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ============ MAIN CONTENT ============ -->
+    <main class="main-content">
+      <div class="content-wrapper">
+
+        <!-- HOME / HERO -->
+        <section id="home">
+          <div class="hero">
+            <h1 class="hero-greeting">Hello</h1>
+            <p class="hero-subtitle">
+              I'm <strong>FellowExplorer</strong> — I build AI-powered tools and explore the frontier of artificial intelligence. Welcome to my corner of the internet where I share my projects, ideas, and experiments.
+            </p>
+            <div class="hero-tagline">
+              <span class="dot"></span>
+              Open to collaborations & investments
+            </div>
+          </div>
+
+          <!-- Updates -->
+          <div class="section-header reveal">
+            <h2 class="section-title">Updates</h2>
+          </div>
+          <div class="updates-grid">
+            <div class="update-tile reveal reveal-delay-1">
+              <div class="update-icon emoji">🚀</div>
+              <div class="update-body">
+                <h3 class="update-title">
+                  Launched AgentFlow v2.0
+                  <span class="external-icon">↗</span>
+                </h3>
+                <p class="update-description">Major release of multi-agent orchestration framework with support for parallel execution and tool chaining.</p>
+              </div>
+              <p class="update-date">Jul 2026</p>
+            </div>
+            <div class="update-tile reveal reveal-delay-2">
+              <div class="update-icon emoji">🏆</div>
+              <div class="update-body">
+                <h3 class="update-title">
+                  Featured in AI Weekly
+                </h3>
+                <p class="update-description">NeuralCanvas was featured as one of the top open-source AI art tools of 2026.</p>
+              </div>
+              <p class="update-date">Jun 2026</p>
+            </div>
+            <div class="update-tile reveal reveal-delay-3">
+              <div class="update-icon emoji">💡</div>
+              <div class="update-body">
+                <h3 class="update-title">
+                  Seed Round Closed
+                </h3>
+                <p class="update-description">Raised pre-seed funding to scale AI infrastructure and expand the team.</p>
+              </div>
+              <p class="update-date">May 2026</p>
+            </div>
+            <div class="update-tile reveal reveal-delay-4">
+              <div class="update-icon emoji">🎙️</div>
+              <div class="update-body">
+                <h3 class="update-title">
+                  Podcast: The AI Builder Show
+                  <span class="external-icon">↗</span>
+                </h3>
+                <p class="update-description">Discussed building production AI systems and the future of autonomous agents.</p>
+              </div>
+              <p class="update-date">Apr 2026</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about">
+          <div class="section-header reveal">
+            <h2 class="section-title">About</h2>
+          </div>
+          <div class="about-content">
+            <div class="about-bio reveal">
+              <p>
+                I'm an <strong>AI engineer and builder</strong> passionate about creating tools that push the boundaries of what's possible with artificial intelligence. My work spans from <strong>generative AI</strong> and <strong>large language models</strong> to <strong>multi-agent systems</strong> and production ML infrastructure.
+              </p>
+              <p>
+                I believe the best way to understand AI is to build with it. That's why I spend my time creating open-source projects, writing about practical AI engineering, and exploring new paradigms in machine intelligence.
+              </p>
+              <p>
+                When I'm not coding, you'll find me reading research papers, contributing to the open-source community, or exploring new ideas at the intersection of technology and creativity.
+              </p>
+
+              <div class="skills-grid">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">PyTorch</span>
+                <span class="skill-tag">LangChain</span>
+                <span class="skill-tag">Transformers</span>
+                <span class="skill-tag">RAG Systems</span>
+                <span class="skill-tag">Multi-Agent AI</span>
+                <span class="skill-tag">Diffusion Models</span>
+                <span class="skill-tag">MLOps</span>
+                <span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">React</span>
+                <span class="skill-tag">Node.js</span>
+                <span class="skill-tag">Cloud Infrastructure</span>
+              </div>
+            </div>
+
+            <div class="about-stats reveal">
+              <div class="stat-card">
+                <div class="stat-number">4+</div>
+                <div class="stat-label">AI Projects</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">10K+</div>
+                <div class="stat-label">GitHub Stars</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Articles</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- AI PROJECTS -->
+        <section id="projects">
+          <div class="section-header reveal">
+            <h2 class="section-title">AI Projects</h2>
+            <a href="#" class="section-link">View All →</a>
+          </div>
+          <div class="projects-grid">
+
+            <!-- Project 1: NeuralCanvas -->
+            <article class="project-card reveal reveal-delay-1" id="project-neuralcanvas">
+              <div class="project-card-glow"></div>
+              <div class="project-image">
+                <img src="assets/project-neuralcanvas.jpg" alt="NeuralCanvas — AI Art Generation Tool" loading="lazy" />
+                <div class="project-image-overlay"></div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-name">NeuralCanvas</h3>
+                <p class="project-description">An open-source AI art generation platform powered by state-of-the-art diffusion models. Supports text-to-image, image-to-image, and style transfer with real-time previews.</p>
+                <div class="project-tags">
+                  <span class="project-tag">Diffusion</span>
+                  <span class="project-tag cyan">PyTorch</span>
+                  <span class="project-tag">Stable Diffusion</span>
+                  <span class="project-tag cyan">React</span>
+                </div>
+                <a href="#" class="project-link">
+                  Explore project
+                  <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 2: ConvoAI -->
+            <article class="project-card reveal reveal-delay-2" id="project-convoai">
+              <div class="project-card-glow"></div>
+              <div class="project-image">
+                <img src="assets/project-convoai.jpg" alt="ConvoAI — Conversational AI Assistant" loading="lazy" />
+                <div class="project-image-overlay"></div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-name">ConvoAI</h3>
+                <p class="project-description">A production-grade conversational AI assistant with RAG pipeline, semantic search, and multi-turn memory. Built for enterprises that need reliable AI-powered support.</p>
+                <div class="project-tags">
+                  <span class="project-tag">RAG</span>
+                  <span class="project-tag cyan">LangChain</span>
+                  <span class="project-tag">Vector DB</span>
+                  <span class="project-tag cyan">FastAPI</span>
+                </div>
+                <a href="#" class="project-link">
+                  Explore project
+                  <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 3: DataForge -->
+            <article class="project-card reveal reveal-delay-3" id="project-dataforge">
+              <div class="project-card-glow"></div>
+              <div class="project-image">
+                <img src="assets/project-dataforge.jpg" alt="DataForge — Automated Data Analysis" loading="lazy" />
+                <div class="project-image-overlay"></div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-name">DataForge</h3>
+                <p class="project-description">Automated data analysis and visualization powered by LLMs. Upload a dataset, ask questions in natural language, and get instant charts, insights, and reports.</p>
+                <div class="project-tags">
+                  <span class="project-tag">LLM</span>
+                  <span class="project-tag cyan">Pandas</span>
+                  <span class="project-tag">Data Viz</span>
+                  <span class="project-tag cyan">Streamlit</span>
+                </div>
+                <a href="#" class="project-link">
+                  Explore project
+                  <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </article>
+
+            <!-- Project 4: AgentFlow -->
+            <article class="project-card reveal reveal-delay-4" id="project-agentflow">
+              <div class="project-card-glow"></div>
+              <div class="project-image">
+                <img src="assets/project-agentflow.jpg" alt="AgentFlow — Multi-Agent Orchestration" loading="lazy" />
+                <div class="project-image-overlay"></div>
+              </div>
+              <div class="project-content">
+                <h3 class="project-name">AgentFlow</h3>
+                <p class="project-description">A framework for building and orchestrating multi-agent AI systems. Define agent roles, tool access, and communication patterns with a simple declarative API.</p>
+                <div class="project-tags">
+                  <span class="project-tag">Multi-Agent</span>
+                  <span class="project-tag cyan">Python</span>
+                  <span class="project-tag">Orchestration</span>
+                  <span class="project-tag cyan">gRPC</span>
+                </div>
+                <a href="#" class="project-link">
+                  Explore project
+                  <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </article>
+
+          </div>
+        </section>
+
+        <!-- WRITING -->
+        <section id="writing">
+          <div class="section-header reveal">
+            <h2 class="section-title">Writing</h2>
+            <a href="#" class="section-link">View All →</a>
+          </div>
+          <div class="writing-list">
+            <a href="#" class="writing-item reveal reveal-delay-1" id="post-1">
+              <div class="writing-item-left">
+                <p class="writing-item-number">01</p>
+                <h3 class="writing-title">The Future of AI Agents in Production</h3>
+                <p class="writing-excerpt">Why autonomous AI agents will reshape enterprise software, and what we need to build before they're ready for prime time.</p>
+              </div>
+              <div class="writing-meta">
+                <span class="writing-date">Jul 2026</span>
+                <span class="writing-read-time">8 min read</span>
+                <span class="writing-arrow">→</span>
+              </div>
+            </a>
+            <a href="#" class="writing-item reveal reveal-delay-2" id="post-2">
+              <div class="writing-item-left">
+                <p class="writing-item-number">02</p>
+                <h3 class="writing-title">Building RAG Systems That Actually Work</h3>
+                <p class="writing-excerpt">Lessons learned from deploying retrieval-augmented generation in production: chunking strategies, embedding models, and hybrid search.</p>
+              </div>
+              <div class="writing-meta">
+                <span class="writing-date">Jun 2026</span>
+                <span class="writing-read-time">12 min read</span>
+                <span class="writing-arrow">→</span>
+              </div>
+            </a>
+            <a href="#" class="writing-item reveal reveal-delay-3" id="post-3">
+              <div class="writing-item-left">
+                <p class="writing-item-number">03</p>
+                <h3 class="writing-title">Why I'm Bullish on Open Source AI</h3>
+                <p class="writing-excerpt">The open-source AI ecosystem is accelerating faster than proprietary alternatives. Here's why that matters for builders and investors.</p>
+              </div>
+              <div class="writing-meta">
+                <span class="writing-date">May 2026</span>
+                <span class="writing-read-time">6 min read</span>
+                <span class="writing-arrow">→</span>
+              </div>
+            </a>
+            <a href="#" class="writing-item reveal reveal-delay-4" id="post-4">
+              <div class="writing-item-left">
+                <p class="writing-item-number">04</p>
+                <h3 class="writing-title">From Zero to Production: Deploying LLM Applications</h3>
+                <p class="writing-excerpt">A practical guide to taking your LLM prototype from a Jupyter notebook to a production-ready API with monitoring and guardrails.</p>
+              </div>
+              <div class="writing-meta">
+                <span class="writing-date">Apr 2026</span>
+                <span class="writing-read-time">15 min read</span>
+                <span class="writing-arrow">→</span>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact">
+          <div class="section-header reveal">
+            <h2 class="section-title">Get in Touch</h2>
+          </div>
+          <div class="contact-grid reveal">
+            <a href="mailto:hello@fellowexplorer.com" class="contact-card" id="contact-email">
+              <div class="contact-card-icon">
+                <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="contact-card-info">
+                <h3>Email</h3>
+                <p>hello@fellowexplorer.com</p>
+              </div>
+            </a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="contact-card" id="contact-github">
+              <div class="contact-card-icon cyan">
+                <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              </div>
+              <div class="contact-card-info">
+                <h3>GitHub</h3>
+                <p>@fellowexplorer</p>
+              </div>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="contact-card" id="contact-linkedin">
+              <div class="contact-card-icon">
+                <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </div>
+              <div class="contact-card-info">
+                <h3>LinkedIn</h3>
+                <p>fellowexplorer</p>
+              </div>
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="contact-card" id="contact-twitter">
+              <div class="contact-card-icon cyan">
+                <svg viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+              </div>
+              <div class="contact-card-info">
+                <h3>Twitter / X</h3>
+                <p>@fellowexplorer</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="contact-cta reveal">
+            <h3>Let's Build Something Together</h3>
+            <p>Whether you're an investor, fellow builder, or just curious about AI — I'd love to hear from you.</p>
+            <a href="mailto:hello@fellowexplorer.com" class="cta-button">
+              Say Hello
+              <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+          <div class="footer-content">
+            <p>&copy; 2026 FellowExplorer. All rights reserved.</p>
+            <div class="footer-links">
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+          </div>
+        </footer>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+
+</body>
+</html>
